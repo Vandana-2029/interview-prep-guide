@@ -18,6 +18,10 @@ const clientBuild = path.resolve(here, '../../client/dist'); // created by `npm 
 export function createApp() {
   const app = express();
 
+  // On Render every request comes through its proxy. Trusting one proxy hop makes req.ip the visitor's
+  // real IP, so the login rate limit counts each visitor separately instead of everyone together.
+  if (process.env.NODE_ENV === 'production') app.set('trust proxy', 1);
+
   // ---- middleware: runs on every request, in this order ----
   app.use(
     helmet({
