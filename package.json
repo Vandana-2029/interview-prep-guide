@@ -1,0 +1,16 @@
+{
+  "name": "a2z-journey",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MERN app to track Striver's A2Z DSA sheet with a daily streak, plus interview prep",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "build": "npm install --prefix server && npm install --prefix client --include=dev && npm run build --prefix client",
+    "start": "npm start --prefix server",
+    "test": "npm test --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

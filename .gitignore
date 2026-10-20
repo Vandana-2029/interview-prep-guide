@@ -1,0 +1,10 @@
+node_modules/
+client/dist/
+.env
+*.log
+.DS_Store
+
+# Local secrets and editor/tool settings
+.env.*
+!.env.example
+.claude/
