@@ -1,0 +1,15 @@
+# One-click deploy on Render (render.com). See README "Deploy".
+services:
+  - type: web
+    name: a2z-journey
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
