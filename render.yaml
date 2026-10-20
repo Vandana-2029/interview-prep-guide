@@ -4,6 +4,7 @@ services:
     name: a2z-journey
     runtime: node
     plan: free
+    region: singapore # close to the MongoDB Atlas cluster in Mumbai
     buildCommand: npm run build
     startCommand: npm start
     envVars:
